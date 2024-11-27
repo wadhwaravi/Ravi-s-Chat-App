@@ -1,0 +1,66 @@
+# Node.js
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+.env
+
+# Logs
+logs
+*.log
+logs/*
+
+# Dependency directories
+client/node_modules/
+server/node_modules/
+
+# Build output
+build/
+dist/
+out/
+
+# React-specific
+.DS_Store
+.vscode/
+.idea/
+*.lock
+*.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Temporary files
+*.tmp
+*.swp
+*.bak
+*.old
+*.orig
+*.save
+
+# MacOS-specific
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Windows-specific
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# Optional npm cache directory
+.npm/
+
+# IDE/Editor files
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.swp
+*.iml
+
+# Deployment
+*.env.production
+*.env.local
