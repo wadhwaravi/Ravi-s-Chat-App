@@ -8,6 +8,25 @@ import {
   isSameUser,
 } from "../config/ChatLogics";
 import { ChatState } from "../Context/ChatProvider";
+const convertTo12HourFormat = function transformDateString(dateString) {
+  // Create a Date object from the input string
+  const date = new Date(dateString);
+
+  // Get hours and minutes
+  let hours = date.getHours();
+  let minutes = date.getMinutes();
+  let period = hours >= 12 ? "PM" : "AM";
+
+  // Convert hours to 12-hour format
+  hours = hours % 12;
+  hours = hours ? hours : 12; // If hours is 0, set it to 12
+
+  // Format minutes to always have 2 digits
+  minutes = minutes < 10 ? "0" + minutes : minutes;
+
+  // Return the formatted time
+  return `${hours}:${minutes} ${period}`;
+};
 
 const ScrollableChat = ({ messages }) => {
   const { user } = ChatState();
@@ -42,7 +61,18 @@ const ScrollableChat = ({ messages }) => {
                 maxWidth: "75%",
               }}
             >
-              {m.content}
+              {m.content}{" "}
+              <span
+                style={{
+                  fontSize: "8px",
+                  color: "grey",
+                  position: "relative",
+                  bottom: "0px",
+                  right: "-1px",
+                }}
+              >
+                {convertTo12HourFormat(m.createdAt)}
+              </span>
             </span>
           </div>
         ))}
