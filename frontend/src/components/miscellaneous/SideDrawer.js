@@ -143,7 +143,7 @@ function SideDrawer() {
           </Button>
         </Tooltip>
         <Text fontSize="2xl" fontFamily="Work sans">
-          Ravi's Chat
+          ChatterBox
         </Text>
         <div>
           <Menu>
