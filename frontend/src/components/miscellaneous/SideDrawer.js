@@ -81,6 +81,7 @@ function SideDrawer() {
 
       setLoading(false);
       setSearchResult(data);
+      console.log(searchResult); // Log the state
     } catch (error) {
       toast({
         title: "Error Occured!",
